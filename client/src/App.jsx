@@ -1,10 +1,14 @@
 /** @format */
 
-import React from "react";
-import "./index.css";
+import NavBar from "./components/NavBar";
 
 function App() {
-  return <div className='text-3xl font-bold underline'>App</div>;
+  return (
+    <>
+      <NavBar />
+      <div className='text-3xl font-bold underline'>App</div>
+    </>
+  );
 }
 
 export default App;
