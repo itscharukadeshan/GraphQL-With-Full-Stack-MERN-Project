@@ -52,7 +52,9 @@ function AddClientModel() {
         </div>
       </button>
 
-      <dialog id='my_modal_1' className='modal mt-40 flex flex-col gap-12'>
+      <dialog
+        id='my_modal_1'
+        className='modal mt-40 flex flex-col gap-12 shadow-lg'>
         <form method='dialog' onSubmit={onSubmit} className='modal-box'>
           <h3 className='font-bold text-lg'>Add Client</h3>
           <div className='py-4'>
