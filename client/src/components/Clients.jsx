@@ -12,8 +12,8 @@ function Clients() {
   return (
     <div className='overflow-x-auto'>
       {!loading && !error && (
-        <table className='table w-96'>
-          <thead>
+        <table className='table w-96 m-5'>
+          <thead className='bg-gray-900 font-bold text-gray-400'>
             <tr>
               <th>Name</th>
               <th>Email</th>

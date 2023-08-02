@@ -9,7 +9,7 @@ function ClientRow({ client }) {
   });
 
   return (
-    <tr className='hover'>
+    <tr className='bg-gray-800'>
       <td>{client.name}</td>
       <td>{client.email}</td>
       <td>{client.phone}</td>
