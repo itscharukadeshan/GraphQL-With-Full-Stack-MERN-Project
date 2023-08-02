@@ -15,8 +15,11 @@ const GET_CLIENTS = gql`
 
 function Clients() {
   const { loading, error, data } = useQuery(GET_CLIENTS);
-  if (loading) return <span> loading </span>;
+  if (loading)
+    return <span className='loading loading-ring loading-sm'> loading </span>;
   if (error) return <span> Something went wrong</span>;
+
+  console.log(data);
 
   return (
     <>
@@ -31,9 +34,9 @@ function Clients() {
             </tr>
           </thead>
           <tbody>
-            {data.clients.map((client) => {
-              <ClientRow key={client.id} client={client} />;
-            })}
+            {data.clients.map((client) => (
+              <ClientRow key={client.id} client={client} />
+            ))}
           </tbody>
         </table>
       )}
