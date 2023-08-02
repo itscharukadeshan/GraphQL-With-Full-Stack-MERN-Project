@@ -15,9 +15,10 @@ function AddClientModel() {
     variables: { name, email, phone },
     update(cache, { data: { addClient } }) {
       const { clients } = cache.readQuery({ query: GET_CLIENTS });
+
       cache.writeQuery({
         query: GET_CLIENTS,
-        data: { clients: clients.concat({ addClient }) },
+        data: { clients: [...clients, addClient] },
       });
     },
   });
@@ -27,10 +28,13 @@ function AddClientModel() {
     if (name === "" || email === "" || phone === "") {
       return alert("Please fill in all fields");
     }
+
     addClient(name, email, phone);
-    setEmail("");
+
     setName("");
+    setEmail("");
     setPhone("");
+
     handleClose();
   };
   const handleClose = () => {
