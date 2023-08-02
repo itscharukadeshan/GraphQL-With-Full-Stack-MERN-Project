@@ -10,9 +10,9 @@ function Clients() {
   if (error) return <span> Something went wrong</span>;
 
   return (
-    <>
+    <div className='overflow-x-auto'>
       {!loading && !error && (
-        <table>
+        <table className='table w-96'>
           <thead>
             <tr>
               <th>Name</th>
@@ -28,7 +28,7 @@ function Clients() {
           </tbody>
         </table>
       )}
-    </>
+    </div>
   );
 }
 
