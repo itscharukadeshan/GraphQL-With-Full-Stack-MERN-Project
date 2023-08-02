@@ -7,6 +7,7 @@ const GET_PROJECTS = gql`
     projects {
       id
       name
+      description
       status
     }
   }
