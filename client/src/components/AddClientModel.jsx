@@ -1,7 +1,7 @@
 /** @format */
 
 import { useState } from "react";
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaTimes } from "react-icons/fa";
 import { useMutation } from "@apollo/client";
 import { ADD_CLIENT } from "../mutations/clientMutations";
 import { GET_CLIENTS } from "../queries/clientQueries";
@@ -46,13 +46,13 @@ function AddClientModel() {
       <button
         className='btn btn-outline m-5 btn-ac'
         onClick={() => window.my_modal_1.showModal()}>
-        <div className='flex flex-row gap-2 items-center'>
+        <div className='flex flex-row gap-2 items-center '>
           <FaUser />
           <div>add client</div>
         </div>
       </button>
 
-      <dialog id='my_modal_1' className='modal'>
+      <dialog id='my_modal_1' className='modal mt-40 flex flex-col gap-12'>
         <form method='dialog' onSubmit={onSubmit} className='modal-box'>
           <h3 className='font-bold text-lg'>Add Client</h3>
           <div className='py-4'>
@@ -85,12 +85,11 @@ function AddClientModel() {
             <button type='submit' className='btn btn-warning btn-outline'>
               Submit
             </button>
-
-            <button className='btn' onClick={handleClose}>
-              Close
-            </button>
           </div>
         </form>
+        <button className='btn btn-outline btn-circle' onClick={handleClose}>
+          <FaTimes />
+        </button>
       </dialog>
     </>
   );
