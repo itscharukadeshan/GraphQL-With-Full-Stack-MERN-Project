@@ -1,12 +1,13 @@
 /** @format */
 
 import NavBar from "./components/NavBar";
+import Clients from "./components/Clients";
 
 function App() {
   return (
     <>
       <NavBar />
-      <div className='text-3xl font-bold underline'>App</div>
+      <Clients />
     </>
   );
 }
