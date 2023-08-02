@@ -7,12 +7,12 @@ import { GET_CLIENTS } from "../queries/clientQueries";
 function ClientRow({ client }) {
   const [deleteClient] = useMutation(DELETE_CLIENT, {
     variables: { id: client.id },
-    update(cache, { data: { deleteClient: deletedClient } }) {
-      const { clients } = cache.readQuery({ query: { GET_CLIENTS } });
+    update(cache, { data: { deleteClient } }) {
+      const { clients } = cache.readQuery({ query: GET_CLIENTS });
       cache.writeQuery({
         query: GET_CLIENTS,
         data: {
-          clients: clients.filter((client) => client.id !== deletedClient.id),
+          clients: clients.filter((client) => client.id !== deleteClient.id),
         },
       });
     },
