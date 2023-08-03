@@ -1,17 +1,20 @@
 /** @format */
 
 import NavBar from "./components/NavBar";
-import Clients from "./components/Clients";
-import AddClientModel from "./components/AddClientModel";
-import Projects from "./components/Projects";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
       <NavBar />
-      <AddClientModel />
-      <Clients />
-      <Projects />
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+
+        <Route path='*' element={<NotFound />}></Route>
+      </Routes>
     </>
   );
 }
