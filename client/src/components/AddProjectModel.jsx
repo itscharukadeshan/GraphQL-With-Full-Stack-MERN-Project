@@ -42,22 +42,20 @@ function AddProjectModel() {
           <button
             className='btn btn-outline m-5 btn-ac'
             onClick={() => window.my_modal_2.showModal()}>
-            <div className='flex flex-row gap-2 items-center '>
-              <FaList />
-              <div>add project</div>
-            </div>
+            <FaList />
+            <div>add project</div>
           </button>
           <dialog
             id='my_modal_2'
-            className='modal mt-40 flex flex-col gap-12 shadow-lg'>
+            className='modal mt-20 flex flex-col gap-12`  shadow-lg'>
             <form method='dialog' onSubmit={onSubmit} className='modal-box'>
-              <h3 className='font-bold text-lg mb-6'>Add Project</h3>
+              <h3 className='font-bold text-lg mb-2'>Add Project</h3>
 
               <label className='label'>
                 <span className='label-text'>Name </span>
               </label>
               <div className='py-4'>
-                <div className='flex flex-col gap-4 '>
+                <div className='flex flex-col gap-1 '>
                   <input
                     type='text'
                     value={name}
@@ -117,7 +115,7 @@ function AddProjectModel() {
               </div>
             </form>
             <button
-              className='btn btn-outline btn-circle'
+              className='btn btn-outline btn-circle mt-2'
               onClick={handleClose}>
               <FaTimes />
             </button>
