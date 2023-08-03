@@ -7,7 +7,7 @@ function ClientInfo({ client }) {
       {client.name && client.email && client.phone && (
         <>
           <ul>
-            <ul className='menu bg-base-200 w-96 rounded-box shadow-xl'>
+            <ul className='menu bg-base-200 w-96 rounded-box shadow-xl mt-8'>
               <h5 className='text-md font-mono font-bold ml-3.5 my-4 bg-base'>
                 {" "}
                 Client info

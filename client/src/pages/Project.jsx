@@ -20,13 +20,17 @@ function Project() {
     <>
       {!loading && !error && (
         <>
-          <div>
-            <div>{data.project.name}</div>
-            <div>{data.project.description}</div>
-            <div>{data.project.status}</div>
+          <div className='flex flex-col items-center mt-12'>
+            <h5 className='text-2xl font-mono my-4 font-bold'>
+              {data.project.name}
+            </h5>
+            <p className='text-lg my-2'>{data.project.description}</p>
+            <div className='my-2 badge badge-outline lowercase'>
+              {data.project.status}
+            </div>
             <ClientInfo client={data.project.client} />
             <Link to={"/"}>
-              <button className='btn btn-outline btn-sm lowercase'>
+              <button className='btn btn-outline btn-sm lowercase mt-8'>
                 <div className='flex flex-row items-center gap-2 '>
                   <>Back</>
                   <IoChevronBackCircleOutline className='mt-0.5 scale-x-[-1]' />
