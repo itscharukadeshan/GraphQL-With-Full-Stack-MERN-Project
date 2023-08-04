@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_PROJECT } from "../queries/projectQueries";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
-
+import DeleteProjectBtn from "../components/DeleteProjectBtn";
 import ClientInfo from "../components/ClientInfo";
 
 function Project() {
@@ -30,6 +30,7 @@ function Project() {
             </div>
             <ClientInfo client={data.project.client} />
             <Link to={"/"}>
+              <DeleteProjectBtn projectId={data.project.id} />
               <button className='btn btn-outline btn-sm lowercase mt-8'>
                 <div className='flex flex-row items-center gap-2 '>
                   {" "}
