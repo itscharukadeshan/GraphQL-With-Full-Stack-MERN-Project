@@ -2,6 +2,7 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 function ProjectCard({ project }) {
+  console.log(project);
   return (
     <div className='card card-side bg-base-300 shadow-xl ml-5'>
       <div className='card-body'>

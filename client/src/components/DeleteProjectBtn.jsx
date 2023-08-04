@@ -6,7 +6,6 @@ import { DELETE_PROJECT } from "../mutations/projectMutation";
 import { GET_PROJECTS } from "../queries/projectQueries";
 
 export default function DeleteProjectBtn({ projectId }) {
-  console.log(projectId);
   const navigate = useNavigate();
 
   const [deleteProject] = useMutation(DELETE_PROJECT, {
@@ -18,7 +17,7 @@ export default function DeleteProjectBtn({ projectId }) {
     <>
       <button
         onClick={deleteProject}
-        className='btn btn-sm btn-warning btn-outline'>
+        className='btn btn-sm btn-error btn-outline'>
         <FaTrash /> Delete project
       </button>
     </>
