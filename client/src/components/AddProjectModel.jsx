@@ -89,29 +89,24 @@ function AddProjectModel() {
                   <label className='label'>
                     <span className='label-text'>Status</span>
                   </label>
-
                   <select
+                    value={status}
                     onChange={(e) => SetStatus(e.target.value)}
                     id='status'
                     className='select select-bordered select-sm w-full max-w-xs'>
-                    <option disabled selected>
-                      Not started
-                    </option>
-                    <option value={"new"}>Not started</option>
-                    <option value={"progress"}>In Progress</option>
-                    <option value={"completed"}>Completed</option>
+                    <option value='new'>Not started</option>
+                    <option value='progress'>In Progress</option>
+                    <option value='completed'>Completed</option>
                   </select>
+
                   <label className='label'>
                     <span className='label-text'>Select Client</span>
                   </label>
-
                   <select
+                    value={clientId}
                     onChange={(e) => setClientId(e.target.value)}
                     id='client'
                     className='select select-bordered select-sm w-full max-w-xs'>
-                    <option disabled selected>
-                      Clients
-                    </option>
                     <option value=''>Clients</option>
                     {data.clients.map((client) => (
                       <option key={client.id} value={client.id}>
