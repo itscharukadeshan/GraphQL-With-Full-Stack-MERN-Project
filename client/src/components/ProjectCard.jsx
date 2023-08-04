@@ -13,7 +13,7 @@ function ProjectCard({ project }) {
             {project.name} <FaExternalLinkAlt className='w-4 mt-2 h-full' />
           </a>
         </h2>
-        <p className='w-50 h-fit py-2'>{project.description}</p>
+        <p className='w-60 h-fit py-2'>{project.description}</p>
         <div className='card-actions justify-end'>
           <div className='badge badge-warning badge-outline mt-4'>
             {project.status}

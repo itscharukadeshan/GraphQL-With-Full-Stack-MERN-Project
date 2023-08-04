@@ -14,7 +14,7 @@ function Projects() {
   return (
     <>
       {data.projects.length > 0 ? (
-        <div className='flex flex-row'>
+        <div className='flex flex-col gap-4 sm:flex-row'>
           {data.projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

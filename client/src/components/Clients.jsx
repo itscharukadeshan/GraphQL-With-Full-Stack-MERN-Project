@@ -10,7 +10,7 @@ function Clients() {
   if (error) return <span> Something went wrong</span>;
 
   return (
-    <div className='overflow-x-auto'>
+    <div>
       {!loading && !error && (
         <table className='table w-96 m-5'>
           <thead className='bg-gray-900 font-bold text-gray-400'>
