@@ -2,6 +2,7 @@
 import { FaIdBadge, FaEnvelope, FaPhone } from "react-icons/fa";
 
 function ClientInfo({ client }) {
+  if (!client) return <>Client info not found</>;
   return (
     <>
       {client.name && client.email && client.phone && (
