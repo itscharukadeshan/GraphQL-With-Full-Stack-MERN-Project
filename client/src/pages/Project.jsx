@@ -32,8 +32,9 @@ function Project() {
             <Link to={"/"}>
               <button className='btn btn-outline btn-sm lowercase mt-8'>
                 <div className='flex flex-row items-center gap-2 '>
+                  {" "}
+                  <IoChevronBackCircleOutline className='mt-.5' />
                   <>Back</>
-                  <IoChevronBackCircleOutline className='mt-0.5 scale-x-[-1]' />
                 </div>
               </button>
             </Link>
