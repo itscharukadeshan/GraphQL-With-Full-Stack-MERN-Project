@@ -5,25 +5,39 @@ import { FaList, FaTimes } from "react-icons/fa";
 import { useMutation, useQuery } from "@apollo/client";
 
 import { GET_PROJECTS } from "../queries/projectQueries";
+import { ADD_PROJECT } from "../mutations/projectMutation";
 import { GET_CLIENTS } from "../queries/clientQueries";
 
 function AddProjectModel() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [clientId, setClientId] = useState("");
-  const { status, SetStatus } = useState("new");
+  const [status, SetStatus] = useState("new");
+
+  const [addProject] = useMutation(ADD_PROJECT, {
+    variables: { name, description, clientId, status },
+    update(cache, { data: { addProject } }) {
+      const { projects } = cache.readQuery({ query: GET_PROJECTS });
+      cache.writeQuery({
+        query: GET_PROJECTS,
+        data: { projects: [...projects, addProject] },
+      });
+    },
+  });
 
   const { loading, error, data } = useQuery(GET_CLIENTS);
 
   const onSubmit = (e) => {
-    e.preventDefault();
     if (name === "" || description === "" || status === "") {
       return alert("Please fill in all fields");
     }
 
+    addProject(name, description, clientId, status);
+
     setName("");
-    setEmail("");
-    setPhone("");
+    setDescription("");
+    SetStatus("new");
+    setClientId("");
 
     handleClose();
   };
@@ -100,7 +114,7 @@ function AddProjectModel() {
                     </option>
                     <option value=''>Clients</option>
                     {data.clients.map((client) => (
-                      <option key={clientId} value={clientId}>
+                      <option key={client.id} value={client.id}>
                         {client.name}
                       </option>
                     ))}
